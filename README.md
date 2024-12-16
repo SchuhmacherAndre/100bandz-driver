@@ -12,7 +12,10 @@ currently has SSDT, AES256 support - hooks to be implemented soon.
 | `MiDoMapped` | ❌ DO NOT USE | - KeStackAttachProcess |
 | `MiDoPoolCopy` | ❌ DO NOT USE | - KeStackAttachProcess |
 
+Reading physical memory might be the move.
+
 going to add more stuff as i dive deeper.
+
 
 # Credits
 - [SchuhmacherAndre](https://github.com/SchuhmacherAndre)

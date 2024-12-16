@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "100bandz", "100bandz.vcxproj", "{8C4D01EE-A60D-4690-B2F5-512B4F822120}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug|x64 = debug|x64
+		release|x64 = release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C4D01EE-A60D-4690-B2F5-512B4F822120}.debug|x64.ActiveCfg = debug|x64
+		{8C4D01EE-A60D-4690-B2F5-512B4F822120}.debug|x64.Build.0 = debug|x64
+		{8C4D01EE-A60D-4690-B2F5-512B4F822120}.debug|x64.Deploy.0 = debug|x64
+		{8C4D01EE-A60D-4690-B2F5-512B4F822120}.release|x64.ActiveCfg = release|x64
+		{8C4D01EE-A60D-4690-B2F5-512B4F822120}.release|x64.Build.0 = release|x64
+		{8C4D01EE-A60D-4690-B2F5-512B4F822120}.release|x64.Deploy.0 = release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

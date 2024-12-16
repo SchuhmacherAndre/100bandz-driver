@@ -1,0 +1,62 @@
+;
+; 100bandz.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System ; TODO: specify appropriate Class
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider    = %ManufacturerName%
+CatalogFile = 100bandz.cat
+DriverVer   = ; TODO: set DriverVer in stampinf property pages
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 13
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+100bandz.sys = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName% = Standard,NT$ARCH$.10.0...16299 ; %13% support introduced in build 16299
+
+[Standard.NT$ARCH$.10.0...16299]
+%100bandz.DeviceDesc% = 100bandz_Device, Root\100bandz ; TODO: edit hw-id
+
+[100bandz_Device.NT]
+CopyFiles = File_Copy
+
+[File_Copy]
+100bandz.sys
+
+;-------------- Service installation
+[100bandz_Device.NT.Services]
+AddService = 100bandz,%SPSVCINST_ASSOCSERVICE%, 100bandz_Service_Inst
+
+; -------------- 100bandz driver install sections
+[100bandz_Service_Inst]
+DisplayName    = %100bandz.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\100bandz.sys
+
+[100bandz_Device.NT.Wdf]
+KmdfService = 100bandz, 100bandz_wdfsect
+
+[100bandz_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ManufacturerName = "<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "100bandz Installation Disk"
+100bandz.DeviceDesc = "100bandz Device"
+100bandz.SVCDESC = "100bandz Service"

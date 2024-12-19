@@ -2,6 +2,8 @@
 
 #include "memory.hh"
 
+#pragma warning(disable : 4311 4302 4083 4005 4319 4100 4003 4242 4244 4189 4022 4047 4152 4055 4142)
+
 extern "C" {
     NTKERNELAPI
         NTSTATUS

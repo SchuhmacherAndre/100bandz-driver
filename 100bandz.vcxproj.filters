@@ -39,6 +39,9 @@
     <ClCompile Include="utils.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="memory.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.hh">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="hooks.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.hh">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

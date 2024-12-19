@@ -9,10 +9,8 @@
 
 #include "ssdt.hh"
 
-KIRQL ssdt::o_IRQL;
-
-PULONGLONG ssdt::GetSSDT() {
-    utils::DisableWriteProtect(o_IRQL);
+PULONGLONG c_ssdt::GetSSDT() {
+    utils->DisableWriteProtect(o_IRQL);
 
     ULONGLONG KiSystemCall64 = __readmsr(0xC0000082);
     ULONGLONG KiSystemServiceRepeat = 0;
@@ -26,25 +24,27 @@ PULONGLONG ssdt::GetSSDT() {
             KiSystemServiceRepeat = KiSystemCall64 + i;
             PULONGLONG result = (PULONGLONG)(*(PINT32)(KiSystemServiceRepeat + 3) +
                 KiSystemServiceRepeat + 7);
-            utils::EnableWriteProtect(o_IRQL);
+            utils->EnableWriteProtect(o_IRQL);
             return result;
         }
     }
 
-    utils::EnableWriteProtect(o_IRQL);
+    utils->EnableWriteProtect(o_IRQL);
     return 0;
 }
 
-PVOID ssdt::FindFunctionAddressInSSDT(uintptr_t idx) {
+PVOID c_ssdt::FindFunctionAddressInSSDT(uintptr_t idx) {
     SDT* ServiceDescriptorTable = (SDT*)GetSSDT();
     if (!ServiceDescriptorTable) {
         return 0;
     }
-    utils::DisableWriteProtect(o_IRQL);
+    utils->DisableWriteProtect(o_IRQL);
     UINT64 base = (UINT64)ServiceDescriptorTable->ServiceTable;
     LONG relativeOffset = (LONG)ServiceDescriptorTable->ServiceTable[idx];
     relativeOffset = relativeOffset >> 4;
     PVOID actualAddress = (PVOID)(base + relativeOffset);
-    utils::EnableWriteProtect(o_IRQL);
+    utils->EnableWriteProtect(o_IRQL);
     return actualAddress;
 }
+KIRQL o_IRQL;
+c_ssdt* ssdt;

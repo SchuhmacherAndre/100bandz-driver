@@ -3,7 +3,7 @@
 
 #include "utils.hh"
 
-VOID utils::DisableWriteProtect(KIRQL& irql) {
+VOID c_utils::DisableWriteProtect(KIRQL& irql) {
     irql = KeRaiseIrqlToDpcLevel();
     ULONG_PTR cr0 = __readcr0();
     cr0 &= ~0x10000;
@@ -11,10 +11,12 @@ VOID utils::DisableWriteProtect(KIRQL& irql) {
     _ReadWriteBarrier();
 }
 
-VOID utils::EnableWriteProtect(KIRQL& irql) {
+VOID c_utils::EnableWriteProtect(KIRQL& irql) {
     ULONG_PTR cr0 = __readcr0();
     cr0 |= 0x10000;
     __writecr0(cr0);
     _ReadWriteBarrier();
     KeLowerIrql(irql);
 }
+
+c_utils* utils;

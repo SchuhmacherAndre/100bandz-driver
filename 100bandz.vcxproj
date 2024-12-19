@@ -107,12 +107,14 @@
     <ClCompile Include="aes.cc" />
     <ClCompile Include="hooks.cc" />
     <ClCompile Include="main.cc" />
+    <ClCompile Include="memory.cc" />
     <ClCompile Include="ssdt.cc" />
     <ClCompile Include="utils.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aes.hh" />
     <ClInclude Include="hooks.hh" />
+    <ClInclude Include="memory.hh" />
     <ClInclude Include="ssdt.hh" />
     <ClInclude Include="structs.hh" />
     <ClInclude Include="utils.hh" />

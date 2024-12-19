@@ -14,7 +14,6 @@ extern "C" {
             OUT PULONG ReturnLength OPTIONAL
         );
 
-    NTKERNELAPI PVOID PsGetProcessSectionBaseAddress(__in PEPROCESS Process);
 }
 
 NTSTATUS c_memory::read_physical_addr(PVOID targetAddr, PVOID outBuffer, SIZE_T size, SIZE_T* bytesRead) {

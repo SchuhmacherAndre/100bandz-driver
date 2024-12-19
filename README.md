@@ -1,8 +1,8 @@
 ## Current Features
-Build release/debug x64 - should automatically be set-up.
-SSDT TABLE LOOKUP
-PHYSICAL MEMORY R&W
-AES ENCRYPTION
+Build release/debug x64 - should automatically be set-up.__
+SSDT TABLE LOOKUP__
+PHYSICAL MEMORY R&W__
+AES ENCRYPTION__
 
 ## THOUGHTS
 | Function Name | Usage Status | Reasoning |

@@ -1,8 +1,8 @@
-build release/debug x64 - should be automatically set-up
-
-map with kdmapper for testing purposes
-
-currently has SSDT, AES256 support - hooks to be implemented soon.
+## Current Features
+Build release/debug x64 - should automatically be set-up.  
+SSDT TABLE LOOKUP  
+PHYSICAL MEMORY R&W  
+AES ENCRYPTION  
 
 ## THOUGHTS
 | Function Name | Usage Status | Reasoning |

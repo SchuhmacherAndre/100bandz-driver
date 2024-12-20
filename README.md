@@ -1,7 +1,7 @@
 ## Current Features
 Build release/debug x64 - should automatically be set-up.  
 SSDT TABLE LOOKUP  
-PHYSICAL MEMORY R&W (50% pasted implementation, reading up on phys. memory translation, nonpaste rewrite incoming)
+PHYSICAL MEMORY R&W (50% pasted implementation, reading up on phys. memory translation, nonpaste rewrite incoming)  
 AES ENCRYPTION  
 
 ## THOUGHTS

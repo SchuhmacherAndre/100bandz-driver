@@ -1,4 +1,8 @@
+#ifndef LOGGER_HH
+#define LOGGER_HH
+
 #pragma once
+
 #include <ntddk.h>
 #include <ntstrsafe.h>
 
@@ -53,3 +57,6 @@ inline void GetTimeString(_Out_ PCHAR TimeStr, _In_ SIZE_T Size) {
         LOG_PREFIX " [%s] [%s:%d] %s: 0x%08X\n", \
         timeStr, __FILENAME__, __LINE__, __FUNCTION__, status); \
     } while (0)
+
+
+#endif LOGGER_HH

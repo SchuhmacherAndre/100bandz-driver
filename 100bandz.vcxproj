@@ -113,7 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aes.hh" />
+    <ClInclude Include="exports.hh" />
     <ClInclude Include="hooks.hh" />
+    <ClInclude Include="logger.hh" />
     <ClInclude Include="memory.hh" />
     <ClInclude Include="ssdt.hh" />
     <ClInclude Include="structs.hh" />

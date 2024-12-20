@@ -1,12 +1,13 @@
 ## Current Features
 Build release/debug x64 - should automatically be set-up.  
 SSDT TABLE LOOKUP  
-PHYSICAL MEMORY R&W
+PHYSICAL MEMORY R&W  
 AES ENCRYPTION  
 
 ## Roadmap
 * `rewrite physical memory operations` current implementation is 50% pasted, I'm currently reading up on translation of virt->phys, and how it exactly works. next up is a complete non-pasted rewrite.
 * `vuln chinese driver` i'll try finding a vulnerable preferably chinese driver, admin->kernel exploit, question is, how should we go about mapping our driving using their kernel driver? maybe it doesnt even have to be vulnerable, make we can simply patch its memory <- hollow it out, AND patch it on disk after we load our driver (or `disable eac integrity check`) eac shouldnt be checking memory of signed modules, so we should be good there
+* `usermode -> driver communications` honestly i think a shared memory pool with AES256 encryption is good enough, no need to overcomplicate it
 
 # TODO Once bypass is complete
 * `patch/check performance impact of cr3 shuffle` if theres no RPM/WPM delay then theres no point in patching it

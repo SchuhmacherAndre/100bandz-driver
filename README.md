@@ -12,7 +12,8 @@ AES ENCRYPTION
 # TODO Once bypass is complete
 * `patch/check performance impact of cr3 shuffle` if theres no RPM/WPM delay then theres no point in patching it
 * `tested delay` current read opeartion on notepad takes 10ms with reading cr3
-
+* `custom builds` both ddriver and usermode app will get custom built on windows build server, and then packed
+  
 ## THOUGHTS
 | Function Name | Usage Status | Reasoning |
 |--------------|--------------|-----------|

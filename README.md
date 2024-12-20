@@ -5,10 +5,10 @@ PHYSICAL MEMORY R&W
 AES ENCRYPTION  
 
 ## Roadmap
--- `rewrite physical memory operations` current implementation is 50% pasted, I'm currently reading up on translation of virt->phys, and how it exactly works. next up is a complete non-pasted rewrite.
+* `rewrite physical memory operations` current implementation is 50% pasted, I'm currently reading up on translation of virt->phys, and how it exactly works. next up is a complete non-pasted rewrite.
 
 # TODO Once bypass is complete
--- `patch/check performance impact of cr3 shuffle` if theres no RPM/WPM delay then theres no point in patching it
+* `patch/check performance impact of cr3 shuffle` if theres no RPM/WPM delay then theres no point in patching it
 
 ## THOUGHTS
 | Function Name | Usage Status | Reasoning |

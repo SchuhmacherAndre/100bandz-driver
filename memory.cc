@@ -13,7 +13,6 @@ extern "C" {
             IN ULONG SystemInformationLength,
             OUT PULONG ReturnLength OPTIONAL
         );
-
 }
 
 NTSTATUS c_memory::read_physical_addr(PVOID targetAddr, PVOID outBuffer, SIZE_T size, SIZE_T* bytesRead) {
@@ -105,13 +104,6 @@ UINT64 c_memory::translate_linear_addr(UINT64 dirTableBase, UINT64 virtAddr) {
     return finalAddr ? finalAddr + pageOffset : 0;
 }
 
-DWORD64 c_memory::get_user_dir_table_base_offset() {
-    RTL_OSVERSIONINFOW ver = { 0 };
-    RtlGetVersion(&ver);
-    return ver.dwBuildNumber <= 17763 ? 0x0278 :
-        ver.dwBuildNumber <= 18363 ? 0x0280 : 0x0388;
-}
-
 ULONG_PTR c_memory::get_proc_cr3(PEPROCESS targetProc) {
     if (!targetProc) return 0;
 
@@ -119,7 +111,9 @@ ULONG_PTR c_memory::get_proc_cr3(PEPROCESS targetProc) {
     ULONG_PTR dirBase = *(PULONG_PTR)(procPtr + 0x28);
 
     if (!dirBase) {
-        DWORD64 userDirOffset = get_user_dir_table_base_offset();
+        RTL_OSVERSIONINFOW ver = { 0 };
+        RtlGetVersion(&ver);
+        DWORD64 userDirOffset = ver.dwBuildNumber <= 17763 ? 0x0278 : ver.dwBuildNumber <= 18363 ? 0x0280 : 0x0388;
         return *(PULONG_PTR)(procPtr + userDirOffset);
     }
 

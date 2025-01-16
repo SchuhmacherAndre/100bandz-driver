@@ -1,11 +1,13 @@
 ## What is this?
-100bandz is a .sys driver for windows, originaly intented to be used as an "educational EAC anticheat bypass", but I have lost most interest in this project, this can serve as a good base to lean/expand upon.
+100bandz is a .sys driver for windows, originaly intented to be used as an "educational EAC anticheat bypass", but I have lost most interest in this project, this can serve as a good base to learn from expand upon.  
+there are currently a lot of features missing, like the communication implementation betweem UM and KM, but as i wrote in the roadmap, this shouldnt be hard to do - either map a rw memory area of like 2 bytes, should be plenty to communicate OR map enough for an encrypted aes string.
 
 ## Current Features
 Build release/debug x64 - should automatically be set-up.  
 SSDT TABLE LOOKUP  
 PHYSICAL MEMORY R&W  
 AES ENCRYPTION  
+LOGGING HEADER  
 
 ## Roadmap
 * `rewrite physical memory operations` I'm currently reading up on translation of virt->phys, and how it exactly works. next up is a complete rewrite.
